@@ -1,17 +1,19 @@
 class Ball{
-    constructor(x, y, w, h){
-        this.w = w;
-        this.h = h;
-        this.body = Bodies.rectangle(x, y, w, h);
+    constructor(x, y, r){
+        var options = {
+            restitution:0.01
+        }
+        this.r = r; 
+        this.body = Bodies.circle(x, y, r, options);
         World.add(world, this.body);
     }
 
     reveal(){
-        pos = this.body.position;
+        var pos = this.body.position;
         push();
         translate(pos.x, pos.y);
         ellipseMode(CENTER);
-        ellipse(x, y, this.w, this.h);
+        ellipse(0, 0, this.r);
         pop();
     }
 }

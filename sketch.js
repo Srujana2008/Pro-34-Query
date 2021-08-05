@@ -14,11 +14,12 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  ball = new Ball(400, 200, 30, 30);
+  ball = new Ball(400, 200, 30);
 }
 
 function draw() { 
-  background(255,255,255);  
+  background(0,203,255);  
+  Engine.update(engine);
   ball.reveal();
   drawSprites();
 }
